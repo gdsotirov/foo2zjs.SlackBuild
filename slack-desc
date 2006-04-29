@@ -7,8 +7,5 @@ foo2zjs: HP LaserJet 1000, 1005 and 1020. ZjStream is just one of many wire
 foo2zjs: protocols that are in use today, such as Postscript, PCL, Epson, etc.
 foo2zjs: URL: http://foo2zjs.rkkda.com/
 foo2zjs:
-foo2zjs: WARNING: You will need foomatic-rip script from here 
-foo2zjs: http://www.linuxprinting.org/lpd-doc.html
-foo2zjs:
 foo2zjs: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
 foo2zjs:
