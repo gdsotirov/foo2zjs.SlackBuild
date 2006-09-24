@@ -2,10 +2,10 @@ foo2zjs: foo2zjs (a linux printer driver for ZjStream protocol)
 foo2zjs:
 foo2zjs: foo2zjs is an open source printer driver for printers that use the
 foo2zjs: Zenographics ZjStream wire protocol for their print data, such as the
-foo2zjs: Minolta/QMS magicolor 2300 DL, Konica Minolta magicolor 2430 DL,
-foo2zjs: HP LaserJet 1000, 1005 and 1020. ZjStream is just one of many wire
+foo2zjs: Minolta/QMS magicolor 2300 DL, 2430 DL, HP LaserJet 1000, 1005, 1018,
+foo2zjs: 1020 and 1022, HP ColorJet 2600n. ZjStream is just one of many wire
 foo2zjs: protocols that are in use today, such as Postscript, PCL, Epson, etc.
+foo2zjs:
 foo2zjs: URL: http://foo2zjs.rkkda.com/
 foo2zjs:
 foo2zjs: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
-foo2zjs:
