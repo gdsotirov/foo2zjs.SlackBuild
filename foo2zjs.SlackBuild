@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 #
 # SlackBuild for foo2zjs
 # Written by Georgi D. Sotirov <gdsotirov@dir.bg>
@@ -7,7 +7,7 @@
 . /etc/slack-package.conf
 
 NAME=foo2zjs
-VERSION=20060919
+VERSION=20061010
 BUILD=1
 
 cd $TMP
@@ -91,7 +91,7 @@ cd $PKG_DIR
 md5sum $PKGNAME.tgz > $PKGNAME.tgz.md5
 cat $PKG/install/slack-desc > $PKG_DIR/$PKGNAME.txt
 
-if [ "$1" == "--clean" ]; then
+if [ "$1" == "--cleanup" ]; then
   rm -r $SRC
   rm -r $PKG
 fi
