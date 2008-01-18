@@ -1,0 +1,11 @@
+--- foo2zjs/getweb.in.orig	2007-11-26 22:02:09.000000000 +0200
++++ foo2zjs/getweb.in	2008-01-18 21:50:10.000000000 +0200
+@@ -174,7 +174,7 @@
+ 	;;
+     2300dl|2300)
+ 	getexe \
+-	    ftp://ftp.minolta-qms.com/pub/crc/out_going/win m23dlicc.exe \
++	    ftp://ftp.minolta-qms.com/pub/crc/out_going/windows m23dlicc.exe \
+ 	    "*.icm"
+ 	gettgz \
+ 	    http://foo2zjs.rkkda.com/icm km2430.tar.gz \
