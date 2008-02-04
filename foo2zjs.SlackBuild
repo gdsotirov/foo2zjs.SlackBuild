@@ -7,7 +7,7 @@
 . ../slack-package.conf
 
 NAME=foo2zjs
-VERSION=20080101
+VERSION=20080203
 BUILD=1
 
 cd $TMP
@@ -15,9 +15,6 @@ tar -zxvf $CWD/$NAME.tar.gz
 SRC=$TMP/$NAME
 cd $SRC
 fix_source
-
-# Apply patches
-cat $CWD/$NAME-$VERSION-getweb.diff | patch -p1 -b -z.orig
 
 CFLAGS=$SLKCFLAGS \
 make -e || exit 1
@@ -29,6 +26,7 @@ PKG="$TMP/package-$NAME"
 mkdir -p $PKG
 
 # Make the directories that foo2zjs Makefile expect to find
+install -d -m 755 $PKG/bin
 install -d -m 755 $PKG/usr/bin
 install -d -m 755 $PKG/usr/man
 install -d -m 755 $PKG/usr/doc/$NAME-$VERSION
@@ -41,7 +39,7 @@ install -d -m 755 $PKG/etc/udev/rules.d
 # Install evertything without hotplug
 PREFIX=$PKG \
 BIN=$PKG/usr/bin \
-UDEVBIN=$PKG/usr/bin \
+UDEVBIN=$PKG/bin \
 SHAREZJS=$PKG/usr/share/foo2zjs \
 SHAREOAK=$PKG/usr/share/foo2oak \
 SHAREHP=$PKG/usr/share/foo2hp \
@@ -49,6 +47,7 @@ SHAREXQX=$PKG/usr/share/foo2xqx \
 SHARELAVA=$PKG/usr/share/foo2lava \
 SHAREQPDL=$PKG/usr/share/foo2qpdl \
 SHARESLX=$PKG/usr/share/foo2slx \
+SHAREHC=$PKG/usr/share/foo2hiperc \
 MANDIR=$PKG/usr/man \
 DOCDIR=$PKG/usr/doc/$NAME-$VERSION \
 MODEL=$PKG/usr/share/cups/model \
@@ -80,7 +79,7 @@ chown root:root $PKG/usr/share -R
 ( cd $PKG/usr/share; chmod 755 `find -type d` )
 
 install -d -m 755 $PKG/install
-install -m 644 $CWD/doinst.sh      $PKG/install
+install -m 644 $CWD/doinst.sh      $PKG/install/doinst.sh
 install -m 644 $CWD/slack-desc     $PKG/install/slack-desc
 install -m 644 $CWD/slack-required $PKG/install/slack-required
 
@@ -89,8 +88,6 @@ install -m 644 $CWD/doinst.sh        $PKG/usr/src/slackbuilds/$NAME-$VERSION/doi
 install -m 644 $CWD/slack-desc       $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-desc
 install -m 644 $CWD/slack-required   $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-required
 install -m 644 $CWD/$NAME.SlackBuild $PKG/usr/src/slackbuilds/$NAME-$VERSION/$NAME.SlackBuild
-install -m 644 $CWD/$NAME-$VERSION-getweb.diff \
-               $PKG/usr/src/slackbuilds/$NAME-$VERSION/$NAME-$VERSION-getweb.diff
 
 cd $PKG
 PKGNAME=$NAME-$VERSION-$ARCH-$BUILD$MYIN
